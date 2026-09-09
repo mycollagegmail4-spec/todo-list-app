@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📝 My Tasks</h1>
+            <p class="subtitle">Stay organized and never miss a deadline</p>
+        </div>
+
+        <div class="input-section">
+            <div class="input-group">
+                <input 
+                    type="text" 
+                    id="taskInput" 
+                    placeholder="Add a new task..."
+                    class="task-input"
+                >
+                <input 
+                    type="datetime-local" 
+                    id="deadlineInput" 
+                    class="deadline-input"
+                >
+                <button id="addBtn" class="add-btn">Add Task</button>
+            </div>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="pending">Pending</button>
+                <button class="filter-btn" data-filter="completed">Completed</button>
+                <button class="filter-btn" data-filter="overdue">Overdue</button>
+            </div>
+        </div>
+
+        <div class="stats-section">
+            <div class="stat-box">
+                <span class="stat-number" id="totalTasks">0</span>
+                <span class="stat-label">Total Tasks</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-number" id="completedTasks">0</span>
+                <span class="stat-label">Completed</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-number" id="overdueTasks">0</span>
+                <span class="stat-label">Overdue</span>
+            </div>
+        </div>
+
+        <div id="taskList" class="task-list">
+            <!-- Tasks will be added here -->
+        </div>
+
+        <div id="emptyState" class="empty-state">
+            <p>✨ No tasks yet. Add one to get started!</p>
+        </div>
+
+        <div class="clear-section">
+            <button id="clearBtn" class="clear-btn">Clear All Completed Tasks</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
